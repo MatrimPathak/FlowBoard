@@ -68,7 +68,7 @@ export interface SearchResults {
 
 export interface Team {
   teamId: number;
-  teamName: String;
+  teamName: string;
   productOwnerUSerId?: number;
   projectManagerUSerId?: number;
 }

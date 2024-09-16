@@ -1,10 +1,15 @@
 import Header from "@/components/Header";
 import React from "react";
 
-type Props = {};
+interface UserSettings {
+  username: string;
+  email: string;
+  teamName: string;
+  roleName: string;
+}
 
-const Settings = (props: Props) => {
-  const userSettings = {
+const Settings: React.FC = () => {
+  const userSettings: UserSettings = {
     username: "Matrim Pathak",
     email: "matrim.pathak@flowboard.com",
     teamName: "Development Team",
@@ -20,20 +25,36 @@ const Settings = (props: Props) => {
       <Header name="Settings" />
       <div className="space-y-4">
         <div>
-          <label className={labelStyles}>Username</label>
-          <div className={textStyles}>{userSettings.username}</div>
+          <label className={labelStyles} htmlFor="username">
+            Username
+          </label>
+          <div id="username" className={textStyles}>
+            {userSettings.username}
+          </div>
         </div>
         <div>
-          <label className={labelStyles}>Email</label>
-          <div className={textStyles}>{userSettings.email}</div>
+          <label className={labelStyles} htmlFor="email">
+            Email
+          </label>
+          <div id="email" className={textStyles}>
+            {userSettings.email}
+          </div>
         </div>
         <div>
-          <label className={labelStyles}>Team Name</label>
-          <div className={textStyles}>{userSettings.teamName}</div>
+          <label className={labelStyles} htmlFor="teamName">
+            Team Name
+          </label>
+          <div id="teamName" className={textStyles}>
+            {userSettings.teamName}
+          </div>
         </div>
         <div>
-          <label className={labelStyles}>Role</label>
-          <div className={textStyles}>{userSettings.roleName}</div>
+          <label className={labelStyles} htmlFor="role">
+            Role
+          </label>
+          <div id="role" className={textStyles}>
+            {userSettings.roleName}
+          </div>
         </div>
       </div>
     </div>
